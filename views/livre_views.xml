@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="livre_list_view">
+            <field name="name">livre list</field>
+            <field name="model">bibliotheque.livre</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="titre"/>
+                    <field name="nbPages"/>
+                    <field name="dateEdition"/>
+                    <field name="nbExamplaire"/>
+                    <field name="isbn"/>
+                    <field name="prix"/>
+
+                </tree>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record model="ir.ui.view" id="livre_form_view">
+            <field name="name">livre form</field>
+            <field name="model">bibliotheque.livre</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="titre"/>
+                    <field name="nbPages"/>
+                    <field name="dateEdition"/>
+                    <field name="nbExamplaire"/>
+                    <field name="isbn"/>
+                    <field name="prix"/>
+                </form>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="livre_action_window">
+            <field name="name">livre window</field>
+            <field name="res_model">bibliotheque.livre</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+        <!-- Top menu item -->
+
+        <menuitem name="bibliotheque" id="bibliotheque.menu_root"/>
+        <!-- menu categories -->
+
+        <menuitem name="Livre" id="bibliotheque_livre_cat" parent="bibliotheque.menu_root"/>
+
+        <!-- actions -->
+
+        <menuitem name="List of livre" id="bibliotheque_list_livre" parent="bibliotheque_livre_cat"
+                  action="livre_action_window"/>
+
+    </data>
+</odoo>
