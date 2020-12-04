@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="editeur_list_view">
+            <field name="name">liste des éditeurs</field>
+            <field name="model">bibliotheque.editeur</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                    <field name="pays"/>
+                    <field name="adresse"/>
+                    <field name="telephone"/>
+                </tree>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record model="ir.ui.view" id="editeur_form_view">
+            <field name="name">editeur form</field>
+            <field name="model">bibliotheque.editeur</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="nom"/>
+                        <field name="pays"/>
+                        <field name="adresse"/>
+                        <field name="telephone"/>
+                    </group>
+                    <notebook>
+                        <page string="liste des livres">
+                            <field name="livre_id"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="editeur_action_window">
+            <field name="name">Editeur</field>
+            <field name="res_model">bibliotheque.editeur</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- menu categories -->
+        <menuitem name="Editeur" id="bibliotheque_editeur_cat" parent="bibliotheque.menu_root"/>
+        <!-- actions -->
+        <menuitem name="liste des editeurs" id="bibliotheque_list_editeur" parent="bibliotheque_editeur_cat"
+                  action="editeur_action_window"/>
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="auteur_list_view">
+            <field name="name">liste des auteurs</field>
+            <field name="model">bibliotheque.auteur</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                    <field name="prenom"/>
+                    <field name="biographie"/>
+                </tree>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record model="ir.ui.view" id="auteur_form_view">
+            <field name="name">auteur form</field>
+            <field name="model">bibliotheque.auteur</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                        <field name="biographie"/>
+                    </group>
+                </form>
+                <notebook>
+                    <page string="Liste des  livres">
+                        <field name="livre_ids"/>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="auteur_action_window">
+            <field name="name">Auteur</field>
+            <field name="res_model">bibliotheque.auteur</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- menu categories -->
+        <menuitem name="Auteur" id="bibliotheque_auteur_cat" parent="bibliotheque.menu_root"/>
+        <!-- actions -->
+        <menuitem name="liste des auteurs" id="bibliotheque_list_auteur" parent="bibliotheque_auteur_cat"
+                  action="auteur_action_window"/>
+    </data>
+</odoo>
