@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="emprunt_list_view">
+            <field name="name">liste des emprunts</field>
+            <field name="model">bibliotheque.emprunt</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date_debut"/>
+                    <field name="date_fin"/>
+                    <field name="livre_id"/>
+<!--                    <field name="adherent_id"/>-->
+
+
+                </tree>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record model="ir.ui.view" id="emprunt_form_view">
+            <field name="name">emprunt form</field>
+            <field name="model">bibliotheque.emprunt</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="date_debut"/>
+                        <field name="date_fin"/>
+                        <field name="livre_id"/>
+<!--                        <field name="adherent_id"/>-->
+                    </group>
+                </form>
+
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="emprunt_action_window">
+            <field name="name">Emprunt</field>
+            <field name="res_model">bibliotheque.emprunt</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- menu categories -->
+        <menuitem name="Emprunt" id="bibliotheque_emprunt_cat" parent="bibliotheque.menu_root"/>
+        <!-- actions -->
+        <menuitem name="liste des emprunte" id="bibliotheque_list_emprunt" parent="bibliotheque_emprunt_cat"
+                  action="emprunt_action_window"/>
+    </data>
+</odoo>

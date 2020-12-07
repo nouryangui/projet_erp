@@ -8,4 +8,6 @@ class BibliothequeAdherent(models.Model):
     cin = fields.Integer('cin')
     nom=fields.Char('nom')
     prenom=fields.Char('prenom')
+    emprunt_ids = fields.One2many(comodel_name='bibliotheque.emprunt', inverse_name='adherent_id')
+
 

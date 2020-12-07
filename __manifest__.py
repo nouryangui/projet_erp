@@ -26,8 +26,11 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/livre_views.xml',
+        'views/categorie_views.xml',
         'views/editeur_views.xml',
-        'views/auteur_views.xml',
+        #'views/auteur_views.xml',
+        'views/emprunt_views.xml',
+        'views/adherent_views.xml',
         'security/ir.model.access.csv',
 
     ],

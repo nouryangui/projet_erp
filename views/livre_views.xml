@@ -36,6 +36,10 @@
                         <page string="Liste des  auteurs">
                             <field name="auteur_id"/>
                         </page>
+                        <page string="Liste des emprunts">
+                            <field name="emprunt_ids"/>
+                        </page>
+
                     </notebook>
                 </form>
             </field>

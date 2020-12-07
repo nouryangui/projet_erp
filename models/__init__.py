@@ -5,3 +5,4 @@ from .import categorie
 from .import auteur
 from .import editeur
 from .import adherent
+from .import emprunt

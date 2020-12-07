@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="categorie_list_view">
+            <field name="name">liste des categories</field>
+            <field name="model">bibliotheque.categorie</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="designation"/>
+                    <field name="description"/>
+
+                </tree>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record model="ir.ui.view" id="categorie_form_view">
+            <field name="name">categorie form</field>
+            <field name="model">bibliotheque.categorie</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="designation"/>
+                        <field name="description"/>
+                    </group>
+                    <notebook>
+                        <page string="liste des livres">
+                            <field name="livre_id"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="categorie_action_window">
+            <field name="name">Categorie</field>
+            <field name="res_model">bibliotheque.categorie</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- menu categories -->
+        <menuitem name="categorie" id="bibliotheque_categorie_cat" parent="bibliotheque.menu_root"/>
+        <!-- actions -->
+        <menuitem name="liste des categories" id="bibliotheque_list_categorie" parent="bibliotheque_categorie_cat"
+                  action="categorie_action_window"/>
+    </data>
+</odoo>
