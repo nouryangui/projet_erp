@@ -23,6 +23,9 @@
                         <field name="prenom"/>
                         <field name="biographie"/>
                     </group>
+                    <group>
+                        <field name="num_livre"></field>
+                    </group>
                 </form>
                 <notebook>
                     <page string="Liste des  livres">

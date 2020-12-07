@@ -25,6 +25,9 @@
                         <field name="adresse"/>
                         <field name="telephone"/>
                     </group>
+                     <group>
+                        <field name="num_livre"></field>
+                    </group>
                     <notebook>
                         <page string="liste des livres">
                             <field name="livre_id"/>

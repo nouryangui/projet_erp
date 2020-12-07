@@ -13,3 +13,7 @@ class BibliothequeAuteur(models.Model):
                                      relation='livre_auteur_rel',
                                      column1='nom',
                                      column2='titre', inverse_name="auteur_id")
+    num_livre = fields.Integer("numbers of livres", compute="comp_livre")
+
+    def comp_livre(self):
+        self.num_livre = len(self.livre_ids)

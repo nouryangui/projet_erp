@@ -2,6 +2,6 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_bibliotheque_livre,bibliotheque_livre,model_bibliotheque_livre,base.group_user,1,1,1,1
 access_bibliotheque_auteur,bibliotheque_auteur,model_bibliotheque_auteur,base.group_user,1,1,1,1
 access_bibliotheque_editeur,bibliotheque_editeur,model_bibliotheque_editeur,base.group_user,1,1,1,1
-access_bibliotheque_categorie,bibliotheque_categorie,model_bibliotheque_categorie,base.group_user,1,1,1,1
 access_bibliotheque_adherent,bibliotheque_adherent,model_bibliotheque_adherent,base.group_user,1,1,1,1
-
+access_bibliotheque_categorie,bibliotheque_categorie,model_bibliotheque_categorie,base.group_user,1,1,1,1
+access_bibliotheque_emprunt,bibliotheque_emprunt,model_bibliotheque_emprunt,base.group_user,1,1,1,1

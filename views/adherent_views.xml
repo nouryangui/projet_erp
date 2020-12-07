@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="adherent_list_view">
+            <field name="name">liste des adherents</field>
+            <field name="model">bibliotheque.adherent</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cin"/>
+                    <field name="nom"/>
+                    <field name="prenom"/>
+                </tree>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record model="ir.ui.view" id="adherent_form_view">
+            <field name="name">adherent form</field>
+            <field name="model">bibliotheque.adherent</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="cin"/>
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                    </group>
+                    <group>
+                        <field name="num_emprunt"/>
+                    </group>
+                    <notebook>
+                        <page string="Liste des emprunts">
+                            <field name="emprunt_id"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="adherent_action_window">
+            <field name="name">adherent</field>
+            <field name="res_model">bibliotheque.adherent</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- menu adherents -->
+        <menuitem name="adherent" id="bibliotheque_adherent_cat" parent="bibliotheque.menu_root"/>
+        <!-- actions -->
+        <menuitem name="liste des adherents" id="bibliotheque_list_adherent" parent="bibliotheque_adherent_cat"
+                  action="adherent_action_window"/>
+    </data>
+</odoo>

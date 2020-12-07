@@ -14,6 +14,7 @@
                     <field name="isbn"/>
                     <field name="prix"/>
                     <field name="editeur_id"/>
+                    <field name="categorie_id"/>
                 </tree>
             </field>
         </record>
@@ -31,10 +32,17 @@
                         <field name="isbn"/>
                         <field name="prix"/>
                         <field name="editeur_id"/>
+                        <field name="categorie_id"/>
+                    </group>
+                    <group>
+                        <field name="num_auteur"></field>
                     </group>
                     <notebook>
                         <page string="Liste des  auteurs">
                             <field name="auteur_id"/>
+                        </page>
+                        <page string="Liste des emprunts">
+                            <field name="emprunts_id"/>
                         </page>
                     </notebook>
                 </form>
