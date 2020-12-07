@@ -39,7 +39,7 @@
         <!-- menu categories -->
         <menuitem name="Emprunt" id="bibliotheque_emprunt_cat" parent="bibliotheque.menu_root"/>
         <!-- actions -->
-        <menuitem name="liste des emprunte" id="bibliotheque_list_emprunt" parent="bibliotheque_emprunt_cat"
+        <menuitem name="liste des emprunts" id="bibliotheque_list_emprunt" parent="bibliotheque_emprunt_cat"
                   action="emprunt_action_window"/>
     </data>
 </odoo>
