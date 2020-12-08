@@ -14,4 +14,4 @@ class BibliothequeEmprunt(models.Model):
             name = '[' + emprunt.livre_id.titre + ']' + emprunt.adherent_id.nom + ' ' + emprunt.adherent_id.prenom
             result.append((emprunt.id, name))
         return result
-
+    

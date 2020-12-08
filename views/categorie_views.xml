@@ -18,15 +18,17 @@
             <field name="model">bibliotheque.categorie</field>
             <field name="arch" type="xml">
                 <form>
-                    <group>
-                        <field name="designation"/>
-                        <field name="description"/>
-                    </group>
-                    <notebook>
-                        <page string="liste des livres">
-                            <field name="livre_id"/>
-                        </page>
-                    </notebook>
+                    <sheet>
+                        <group>
+                            <field name="designation"/>
+                            <field name="description"/>
+                        </group>
+                        <notebook>
+                            <page string="liste des livres">
+                                <field name="livre_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
                 </form>
             </field>
         </record>

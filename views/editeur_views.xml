@@ -19,20 +19,22 @@
             <field name="model">bibliotheque.editeur</field>
             <field name="arch" type="xml">
                 <form>
-                    <group>
-                        <field name="nom"/>
-                        <field name="pays"/>
-                        <field name="adresse"/>
-                        <field name="telephone"/>
-                    </group>
-                     <group>
-                        <field name="num_livre"></field>
-                    </group>
-                    <notebook>
-                        <page string="liste des livres">
-                            <field name="livre_id"/>
-                        </page>
-                    </notebook>
+                    <sheet>
+                        <group>
+                            <field name="nom"/>
+                            <field name="pays"/>
+                            <field name="adresse"/>
+                            <field name="telephone"/>
+                        </group>
+                        <group>
+                            <field name="num_livre"></field>
+                        </group>
+                        <notebook>
+                            <page string="liste des livres">
+                                <field name="livre_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
                 </form>
             </field>
         </record>

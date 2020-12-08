@@ -6,6 +6,7 @@ from odoo import models, fields, api
 class BibliothequeAdherent(models.Model):
     _name = 'bibliotheque.adherent'
     _rec_name = 'combination'
+    _inherit = 'mail.thread'
     cin = fields.Integer('cin')
     nom=fields.Char('nom')
     prenom=fields.Char('prenom')

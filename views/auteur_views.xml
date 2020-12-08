@@ -18,20 +18,22 @@
             <field name="model">bibliotheque.auteur</field>
             <field name="arch" type="xml">
                 <form>
-                    <group>
-                        <field name="nom"/>
-                        <field name="prenom"/>
-                        <field name="biographie"/>
-                    </group>
-                    <group>
-                        <field name="num_livre"></field>
-                    </group>
+                    <sheet>
+                        <group>
+                            <field name="nom"/>
+                            <field name="prenom"/>
+                            <field name="biographie"/>
+                        </group>
+                        <group>
+                            <field name="num_livre"></field>
+                        </group>
+                        <notebook>
+                            <page string="Liste des  livres">
+                                <field name="livre_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
                 </form>
-                <notebook>
-                    <page string="Liste des  livres">
-                        <field name="livre_ids"/>
-                    </page>
-                </notebook>
             </field>
         </record>
         <!-- actions opening views on models -->
