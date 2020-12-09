@@ -27,7 +27,7 @@
                     <sheet>
                         <group>
                         <group>
-                            <field name="titre"/>
+                            <field name="titre" required="1"/>
                             <field name="nbPages"/>
                             <field name="dateEdition"/>
                             <field name="nbExamplaire"/>
