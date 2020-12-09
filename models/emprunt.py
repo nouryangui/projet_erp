@@ -16,22 +16,17 @@ class BibliothequeEmprunt(models.Model):
             result.append((emprunt.id, name))
         return result
     @api.one
-    @api.constrains('adherent_id')
+    @api.constrains('adherent_id','livre_id','date_debut', 'date_fin')
     def checknbLivreEmprunté(self):
-        if self.adherent_id.num_emprunt>3:
-            raise UserError("Nb livre emprunté egale 3")
-
-    @api.one
-    @api.constrains('livre_id')
-    def checknbLivreEmprunté(self):
-        if self.livre_id.nbExamplaire <= 1:
-            raise UserError("Nb d'examplaire insuffisant ")
-
-    @api.one
-    @api.constrains('date_debut', 'date_fin')
-    def checkDateEmprunt(self):
         if self.date_fin < self.date_debut:
             raise ValueError('date début emprunt doit etre inférieur à la fin de l''emprunt')
+        elif self.livre_id.nbExamplaire <= 1:
+            raise ValueError("Nb d'examplaire insuffisant ")
+        elif self.adherent_id.num_emprunt>3:
+            raise ValueError("Nb livre emprunté egale 3")
+
+
+
 
 
 
