@@ -31,6 +31,8 @@
         'views/categorie_views.xml',
         'views/emprunt_views.xml',
         'views/adherent_views.xml',
+        'reports/report.xml',
+        'reports/emprunt_card.xml',
         'security/ir.model.access.csv',
 
     ],

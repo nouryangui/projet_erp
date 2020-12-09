@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="report_emprunt_car"
+            string="Emprunt Card"
+            model="bibliotheque.emprunt"
+            report_type="qweb-pdf"
+            name="bibliotheque.report_emprunt"
+            file="bibliotheque.report_emprunt"
+    />
+</odoo>

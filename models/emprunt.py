@@ -4,7 +4,7 @@ from odoo.exceptions import UserError
 
 class BibliothequeEmprunt(models.Model):
     _name = 'bibliotheque.emprunt'
-    date_debut = fields.Date('Date Emprunte')
+    date_debut = fields.Date('Date Emprunt')
     date_fin = fields.Date('Date Retour')
     livre_id = fields.Many2one(comodel_name='bibliotheque.livre')
     adherent_id = fields.Many2one(comodel_name='bibliotheque.adherent')
