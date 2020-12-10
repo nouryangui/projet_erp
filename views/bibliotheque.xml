@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="bibliotheque assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/bibliotheque/static/src/css/bibliotheque.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

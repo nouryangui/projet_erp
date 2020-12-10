@@ -7,6 +7,8 @@ class BibliothequeAdherent(models.Model):
     prenom=fields.Char('prenom')
     emprunt_id = fields.One2many(comodel_name='bibliotheque.emprunt', inverse_name='adherent_id')
     num_emprunt = fields.Integer("nombre des livres  emprunts", compute="comp_emprunt")
+    image = fields.Binary(string= "image")
+
 
     @api.multi
     def name_get(self):

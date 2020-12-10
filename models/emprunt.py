@@ -1,3 +1,5 @@
+from stdnum.at import uid
+
 from odoo import models, fields, api, exceptions
 from odoo.exceptions import UserError
 
@@ -8,6 +10,26 @@ class BibliothequeEmprunt(models.Model):
     date_fin = fields.Date('Date Retour')
     livre_id = fields.Many2one(comodel_name='bibliotheque.livre')
     adherent_id = fields.Many2one(comodel_name='bibliotheque.adherent')
+
+    # @api.model
+    # def create(self, vals):
+    #     new = super().create(vals)
+    #     user_id = uid
+    #     date_deadline = self.date_fin
+    #
+    #     data = {
+    #         'res_id': new.id,
+    #         'res_model_id': self.env['ir.model'].search([('model', '=', 'hr.applicant')]).id,
+    #         # 'user_id': user_id.id,
+    #         'summary': 'foo bar',
+    #         'activity_type_id': self.env.ref('custom.activity_applicant').id,
+    #         'date_deadline': date_deadline
+    #     }
+    #     self.env['mail.activity'].create(data)
+    #     return new
+
+
+
 
     def name_get(self):
         result = []

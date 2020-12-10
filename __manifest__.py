@@ -33,6 +33,8 @@
         'views/adherent_views.xml',
         'reports/report.xml',
         'reports/emprunt_card.xml',
+        'data/cron.xml',
+        'views/bibliotheque.xml',
         'security/ir.model.access.csv',
 
     ],
