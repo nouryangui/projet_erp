@@ -1,3 +1,5 @@
+from typing import Any
+
 from stdnum.at import uid
 
 from odoo import models, fields, api, exceptions
@@ -52,17 +54,24 @@ class BibliothequeEmprunt(models.Model):
     #     self.env['mail.activity'].create(data)
     #     return new
 
+    def decrement_nbExemplaires(self, data_list):
+        for element in data_list: # List = [element, element, ...]
+            print(element)
+            for key in element:
+                if key == "stored":
+                    print("clé : " + key)
+                    print(element[key])
+                    for attribute in element[key]:
+                        if attribute == "livre_id":
+                            element[key][attribute]
 
+    def __getattribute__(self, name: str) -> Any:
+        return super().__getattribute__(name)
 
-    def decrement_nbExemplaires(self):
-        self.livre_id.nbExamplaire = self.livre_id.nbExamplaire -1
-
-    # @api.model
-    # def _create(self, data_list):
-    #     # print("this function works ")
-    #     print(data_list)
-    #     self.decrement_nbExemplaires()
-    #     return super(BibliothequeEmprunt,self)._create(data_list)
+    @api.model
+    def _create(self, data_list):
+        self.decrement_nbExemplaires()
+        return super(BibliothequeEmprunt, self)._create(data_list)
 
 
     def name_get(self):
