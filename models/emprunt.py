@@ -65,12 +65,11 @@ class BibliothequeEmprunt(models.Model):
                         if attribute == "livre_id":
                             element[key][attribute]
 
-    def __getattribute__(self, name: str) -> Any:
-        return super().__getattribute__(name)
+
 
     @api.model
     def _create(self, data_list):
-        self.decrement_nbExemplaires()
+        #self.decrement_nbExemplaires()
         return super(BibliothequeEmprunt, self)._create(data_list)
 
 
