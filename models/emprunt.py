@@ -26,11 +26,13 @@ class BibliothequeEmprunt(models.Model):
     def action_done(self):
         for rec in self:
             rec.state = 'fini'
+            rec.livre_id.nbExamplaire = rec.livre_id.nbExamplaire + 1
 
-    @api.onchange('today')
+    @api.multi
     def change_state_to_expired(self):
         if self.today > self.date_fin:
             self.state = 'expiree'
+            print("expiree")
         else:
             print("the emprunt is still valid")
 
