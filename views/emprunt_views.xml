@@ -24,7 +24,7 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="action_done" type="object" string="Livre retourné" class="oe_highlight"/>
+                        <button name="action_done" type="object" string="Livre retourné" class="oe_highlight" states="lancee"/>
                         <field name="state" widget="statusbar" statusbar_visible="lancee,fini"/>
                     </header>
                     <sheet>
