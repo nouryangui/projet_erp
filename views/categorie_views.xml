@@ -14,7 +14,7 @@
         </record>
         <!-- explicit form view definition -->
         <record model="ir.ui.view" id="categorie_form_view">
-            <field name="name">categorie form</field>
+            <field name="name">Categorie form</field>
             <field name="model">bibliotheque.categorie</field>
             <field name="arch" type="xml">
                 <form>

@@ -10,13 +10,12 @@
                     <field name="nom"/>
                     <field name="prenom"/>
                     <field name="image" widget="image" nolabel="1" class="image_adherent"/>
-
                 </tree>
             </field>
         </record>
         <!-- explicit form view definition -->
         <record model="ir.ui.view" id="adherent_form_view">
-            <field name="name">adherent form</field>
+            <field name="name">Adherent form</field>
             <field name="model">bibliotheque.adherent</field>
             <field name="arch" type="xml">
                 <form>
@@ -45,9 +44,8 @@
             </field>
         </record>
         <!-- actions opening views on models -->
-
         <record model="ir.actions.act_window" id="adherent_action_window">
-            <field name="name">adherent</field>
+            <field name="name">Adherent</field>
             <field name="res_model">bibliotheque.adherent</field>
             <field name="view_mode">tree,form</field>
         </record>

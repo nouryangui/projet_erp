@@ -5,14 +5,11 @@
             <field name="name">liste des emprunts</field>
             <field name="model">bibliotheque.emprunt</field>
             <field name="arch" type="xml">
-<!--            <search string="Search adherant par id">-->
-<!--                <field name="adherent_id"/>-->
-<!--           </search>-->
                 <tree>
-                    <field name="date_debut"/>
-                    <field name="date_fin"/>
                     <field name="livre_id"/>
                     <field name="adherent_id"/>
+                    <field name="date_debut"/>
+                    <field name="date_fin"/>
                     <field name="state"/>
                 </tree>
             </field>
@@ -24,15 +21,16 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="action_done" type="object" string="Livre retourné" class="oe_highlight"/>
+                        <button name="action_done" type="object" string="Livre retourné" class="oe_highlight"
+                                states="lancee"/>
                         <field name="state" widget="statusbar" statusbar_visible="lancee,fini"/>
                     </header>
                     <sheet>
                         <group>
-                            <field name="date_debut"/>
-                            <field name="date_fin"/>
                             <field name="livre_id" required="1"/>
                             <field name="adherent_id" required="1"/>
+                            <field name="date_debut"/>
+                            <field name="date_fin"/>
                         </group>
                     </sheet>
                 </form>
