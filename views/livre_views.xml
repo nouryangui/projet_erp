@@ -10,7 +10,7 @@
                     <field name="titre"/>
                     <field name="nbPages"/>
                     <field name="dateEdition"/>
-                    <field name="nbExamplaire"/>
+                    <field name="nbexamplaire"/>
                     <field name="isbn"/>
                     <field name="prix"/>
                     <field name="editeur_id"/>
@@ -30,7 +30,7 @@
                             <field name="titre" required="1"/>
                             <field name="nbPages"/>
                             <field name="dateEdition"/>
-                            <field name="nbExamplaire" required="1"/>
+                            <field name="nbexamplaire" required="1"/>
                         </group>
                         <group>
                             <field name="isbn"/>
