@@ -21,12 +21,12 @@ class BibliothequeEmprunt(models.Model):
     def action_done(self):
         for rec in self:
             rec.state = 'fini'
-            rec.livre_id.nbExamplaire = rec.livre_id.nbExamplaire + 1
+            rec.livre_id.nbexamplaire = rec.livre_id.nbexamplaire + 1
 
     @api.one
     @api.constrains('date_fin', 'today')
     def change_state_to_expired(self):
-        if self.today >= self.date_fin:
+        if self.today > self.date_fin:
             self.state = 'expiree'
 
     def _create(self, data_list):
