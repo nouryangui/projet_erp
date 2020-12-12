@@ -1,15 +1,41 @@
+from typing import Any
+
 from stdnum.at import uid
 
 from odoo import models, fields, api, exceptions
 from odoo.exceptions import UserError, _logger
 
-
 class BibliothequeEmprunt(models.Model):
     _name = 'bibliotheque.emprunt'
     date_debut = fields.Date('Date Emprunt')
     date_fin = fields.Date('Date Retour')
+    today = fields.Date.today()
+    # print(type(date_fin))
+    # print(today)
+    # print(type(today))
     livre_id = fields.Many2one(comodel_name='bibliotheque.livre')
     adherent_id = fields.Many2one(comodel_name='bibliotheque.adherent')
+    state = fields.Selection(
+        [
+        ('lancee','Livre emprunté'),
+        ('fini','Livre retourné'),
+        ('expiree','Expiré'),
+        ],
+        string='Status', readonly=True,default='lancee')
+
+    def action_done(self):
+        for rec in self:
+            rec.state = 'fini'
+
+    @api.onchange('today')
+    def change_state_to_expired(self):
+        if self.today > self.date_fin:
+            self.state = 'expiree'
+        else:
+            print("the emprunt is still valid")
+
+
+
 
    # def _create(self, data_list):
    #      for data in data_list:
@@ -41,6 +67,7 @@ class BibliothequeEmprunt(models.Model):
     #     }
     #     self.env['mail.activity'].create(data)
     #     return new
+
 
     def name_get(self):
         result = []

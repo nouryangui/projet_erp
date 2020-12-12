@@ -22,9 +22,9 @@
                 <form>
                     <sheet>
                         <group>
-                            <field name="cin"/>
-                            <field name="nom"/>
-                            <field name="prenom"/>
+                            <field name="cin" required="1"/>
+                            <field name="nom" required="1"/>
+                            <field name="prenom" required="1"/>
                             <field name="image" widget="image" class="image_adherent"/>
                         </group>
                         <group>
