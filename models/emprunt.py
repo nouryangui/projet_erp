@@ -26,8 +26,10 @@ class BibliothequeEmprunt(models.Model):
         if self.today >= self.date_fin:
             self.state = 'expiree'
 
+    def _create(self, data_list):
+        return super()._create(data_list)
 
-   # def _create(self, data_list):
+    # def _create(self, data_list):
    #      for data in data_list:
    #          print(data)
    #          for x in data :
@@ -41,22 +43,7 @@ class BibliothequeEmprunt(models.Model):
 
         #return super()._create(data_list)
 
-    # @api.model
-    # def create(self, vals):
-    #     new = super().create(vals)
-    #     user_id = uid
-    #     date_deadline = self.date_fin
-    #
-    #     data = {
-    #         'res_id': new.id,
-    #         'res_model_id': self.env['ir.model'].search([('model', '=', 'hr.applicant')]).id,
-    #         # 'user_id': user_id.id,
-    #         'summary': 'foo bar',
-    #         'activity_type_id': self.env.ref('custom.activity_applicant').id,
-    #         'date_deadline': date_deadline
-    #     }
-    #     self.env['mail.activity'].create(data)
-    #     return new
+
 
 
     def name_get(self):
